@@ -1,0 +1,23 @@
+version: '3.8'
+services:
+
+  # Modo mock (por defecto) - sin servicio SOAP real
+  acme-pedidos-mock:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=default
+    profiles:
+      - mock
+
+  # Modo producción - con servicio SOAP real
+  acme-pedidos-prod:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_PROFILES_ACTIVE=prod
+      - ACME_SOAP_URL=https://run.mocky.io/v3/19217075-6d4e-4818-98bc-416d1feb7b84
+    profiles:
+      - prod

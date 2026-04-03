@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+acme:
+  soap:
+    url: https://run.mocky.io/v3/19217075-6d4e-4818-98bc-416d1feb7b84
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operationsSorter: method
+
+logging:
+  level:
+    com.acme.pedidos: DEBUG
